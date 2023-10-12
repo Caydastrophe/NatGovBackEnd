@@ -7,14 +7,15 @@ GET https://localhost:3002/api HTTP/1.1
 GET https://localhost:3002/api/bulletinBoards HTTP/1.1
 ###
 
-DELETE https://localhost:3002/api/bulletinBoards/6527ef7f4a1e300a1b1fa494 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdlZjUyNGExZTMwMGExYjFmYTQ5MSIsImlhdCI6MTY5NzExNTk4OSwiZXhwIjoxNjk3MTE5NTg5fQ.y4DfNu8eEeWPlVbbcc0dyVO6IEdUtZifGpYhHdRd6VI
+DELETE https://localhost:3002/api/bulletinBoards/6527f1f58b9f3cdfea20eeeb HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdmMTM5OGI5ZjNjZGZlYTIwZWVlOCIsImlhdCI6MTY5NzExNjU2NywiZXhwIjoxNjk3MTIwMTY3fQ.YHUzqgtNDpThinNF1lvsv0r4reXMvW7LJvpPiSi3X_g
 
 ###
 
 POST https://localhost:3002/api/bulletinBoards HTTP/1.1
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdlZjUyNGExZTMwMGExYjFmYTQ5MSIsImlhdCI6MTY5NzExNTk4OSwiZXhwIjoxNjk3MTE5NTg5fQ.y4DfNu8eEeWPlVbbcc0dyVO6IEdUtZifGpYhHdRd6VI
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdmMTM5OGI5ZjNjZGZlYTIwZWVlOCIsImlhdCI6MTY5NzExNjU2NywiZXhwIjoxNjk3MTIwMTY3fQ.YHUzqgtNDpThinNF1lvsv0r4reXMvW7LJvpPiSi3X_g
+
 
 {
     "id" : "post001", 
