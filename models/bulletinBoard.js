@@ -3,9 +3,7 @@ const mongoose = require('mongoose')
 const bulletinBoardschema = mongoose.Schema(
     {
         id: {type: String, required: true},
-        caption: {type: String , required: true},
-        likes: {type: Number, required: true},
-        imgUrl: {type: String, required: true}
+        caption: {type: String , required: true}
     }
 )
 

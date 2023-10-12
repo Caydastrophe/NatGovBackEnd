@@ -7,27 +7,18 @@ GET https://localhost:3002/api HTTP/1.1
 GET https://localhost:3002/api/bulletinBoards HTTP/1.1
 ###
 
-DELETE https://localhost:3002/api/bulletinBoards/_id HTTP/1.1 
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwidXNlcmlkIjoiNjUwN2VmOTI0MjVmNDc0ZGQ5YTlhMGY5IiwiaWF0IjoxNjk1MDIxODQ2LCJleHAiOjE2OTUwMjU0NDZ9.AKRx9SQq8nEtRFkUapl45amviGH47FDQRQnbg-Qog6g
+DELETE https://localhost:3002/api/bulletinBoards/6527ef7f4a1e300a1b1fa494 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdlZjUyNGExZTMwMGExYjFmYTQ5MSIsImlhdCI6MTY5NzExNTk4OSwiZXhwIjoxNjk3MTE5NTg5fQ.y4DfNu8eEeWPlVbbcc0dyVO6IEdUtZifGpYhHdRd6VI
 
-{
-    "id" : "post001", 
-    "caption" : "Help2", 
-    "likes" : 1, 
-    "imgUrl"  : "https://i.pinimg.com/564x/06/e0/be/06e0bea1c86e05ff0a8fd81a92b9c84b.jpg"
-}
 ###
 
 POST https://localhost:3002/api/bulletinBoards HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwidXNlcmlkIjoiNjUwN2VmOTI0MjVmNDc0ZGQ5YTlhMGY5IiwiaWF0IjoxNjk1MDIxODQ2LCJleHAiOjE2OTUwMjU0NDZ9.AKRx9SQq8nEtRFkUapl45amviGH47FDQRQnbg-Qog6g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdlZjUyNGExZTMwMGExYjFmYTQ5MSIsImlhdCI6MTY5NzExNTk4OSwiZXhwIjoxNjk3MTE5NTg5fQ.y4DfNu8eEeWPlVbbcc0dyVO6IEdUtZifGpYhHdRd6VI
 
 {
     "id" : "post001", 
-    "caption" : "Help2", 
-    "likes" : 1, 
-    "imgUrl"  : "https://i.pinimg.com/564x/06/e0/be/06e0bea1c86e05ff0a8fd81a92b9c84b.jpg"
+    "caption" : "Official Government Post"
 }
 ###
 
@@ -35,8 +26,8 @@ POST https://localhost:3002/api/users/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "test3",
-    "password": "youwillneverguess3"
+    "username": "governmentAgent",
+    "password": "IamNotASpy#123"
 }
 ###
 
@@ -44,7 +35,7 @@ POST https://localhost:3002/api/users/login HTTP/1.1
 Content-Type: application/json
 
 {
- "username": "test3",
- "password": "youwillneverguess3"
+ "username": "governmentAgent",
+ "password": "IamNotASpy#123"
 }
 ###

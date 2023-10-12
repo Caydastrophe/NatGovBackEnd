@@ -16,11 +16,9 @@ router.get('', (req, res) =>
 
 
 router.post('', checkauth, (req, res)=>{
-    const bulletinBoard = new bulletinBoard( {
+    const bulletinBoard = new BulletinBoard( {
         id: req.body.id,
-        caption: req.body.caption,
-        likes: req.body.likes,
-        imgUrl: req.body.imgUrl 
+        caption: req.body.caption
     }
     )
     bulletinBoard.save().then(()=>{
@@ -31,7 +29,7 @@ router.post('', checkauth, (req, res)=>{
     })
 })
 
-router.delete('', checkauth, (req,res)=>{
+router.delete('/:id', checkauth, (req,res)=>{
     BulletinBoard.deleteOne({_id: req.params.id})
     .then((result)=>
     {

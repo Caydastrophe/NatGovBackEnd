@@ -15,6 +15,7 @@ const connstring = secret.connectionString
 const bulletinBoardRoutes = require('./routes/bulletinBoard');
 
 const userRoutes = require('./routes/user');
+const { error } = require('console');
 
 mongoose.connect(connstring)
 .then(() =>
@@ -23,7 +24,7 @@ mongoose.connect(connstring)
 })
 .catch(() =>
 {
-console.log('Connection failed')
+    console.log('Connection failed')
 },options);
 
 app.use(express.json())
@@ -43,7 +44,7 @@ app.get(urlprefix+'/', (req, res) =>
 
 app.use(urlprefix+'/bulletinBoards', bulletinBoardRoutes)
 
-app.use(urlprefix+'/bulletinBoards', userRoutes)
+app.use(urlprefix+'/users', userRoutes)
  
 
 module.exports = app;
