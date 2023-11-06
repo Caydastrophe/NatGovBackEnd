@@ -14,12 +14,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imdvd
 
 POST https://localhost:3002/api/bulletinBoards HTTP/1.1
 Content-Type: application/json 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdmMTM5OGI5ZjNjZGZlYTIwZWVlOCIsImlhdCI6MTY5NzExNjU2NywiZXhwIjoxNjk3MTIwMTY3fQ.YHUzqgtNDpThinNF1lvsv0r4reXMvW7LJvpPiSi3X_g
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdvdmVybm1lbnRBZ2VudCIsInVzZXJpZCI6IjY1MjdmMTM5OGI5ZjNjZGZlYTIwZWVlOCIsImlhdCI6MTY5OTI5Mjc0MSwiZXhwIjoxNjk5Mjk2MzQxfQ.6oqz-A_1k7SeVk8kcTgLin4wRMobuLgaAf9Slv_l1H0
 
 {
-    "id" : "post001", 
-    "caption" : "Official Government Post"
+  "id" : "post001", 
+    "caption" : "Help2", 
 }
 ###
 

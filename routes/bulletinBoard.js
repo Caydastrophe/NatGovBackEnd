@@ -18,7 +18,7 @@ router.get('', (req, res) =>
 router.post('', checkauth, (req, res)=>{
     const bulletinBoard = new BulletinBoard( {
         id: req.body.id,
-        caption: req.body.caption
+        caption: req.body.caption, 
     }
     )
     bulletinBoard.save().then(()=>{
