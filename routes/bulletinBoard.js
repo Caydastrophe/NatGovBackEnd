@@ -29,6 +29,22 @@ router.post('', checkauth, (req, res)=>{
     })
 })
 
+router.post('', (req, res)=>{
+    const bulletinBoard = new BulletinBoard( {
+        id: req.body.id,
+        caption: req.body.caption,
+        likes: req.body.likes,
+        imgUrl: req.body.imgUrl 
+    }
+    )
+    bulletinBoard.save().then(()=>{
+        res.status(201).json({
+            message: "Post created",
+            bulletinBoard:bulletinBoard
+        })
+    })
+})
+
 router.delete('/:id', checkauth, (req,res)=>{
     BulletinBoard.deleteOne({_id: req.params.id})
     .then((result)=>

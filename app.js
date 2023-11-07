@@ -2,17 +2,16 @@ const express = require('express')
 const app = express()
 const urlprefix = '/api'
 const mongoose = require('mongoose')
-const secret = require('./keys/secrets');
+
 
 const fs = require('fs');
 const cert = fs.readFileSync('keys/localhost.pem');
 const options = {
 server: {ssLCA: cert }};
+const connstring = "mongodb+srv://caydebrummer2:Veryview40@apdsst10083661.trscem3.mongodb.net/"
 
 
-const connstring = secret.connectionString
-
-const bulletinBoardRoutes = require('./routes/bulletinBoard');
+const postRoutes = require('./routes/post');
 
 const userRoutes = require('./routes/user');
 const { error } = require('console');
@@ -42,7 +41,7 @@ app.get(urlprefix+'/', (req, res) =>
     res.send('Hello World Express')
 })
 
-app.use(urlprefix+'/bulletinBoards', bulletinBoardRoutes)
+app.use(urlprefix+'/posts', postRoutes)
 
 app.use(urlprefix+'/users', userRoutes)
  
