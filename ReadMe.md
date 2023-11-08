@@ -37,6 +37,7 @@ To pull code from a Git repository into Visual Studio using the terminal, you ca
     • npm i mongoose
     -- bcrypt
     • npm i bcrypt
+    
 3) This is my private key --
 -----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLCg3nZFp2T53Q
@@ -66,6 +67,7 @@ UlDushlNBWu8gpcerhHgDfzfzDDADDoZkwxZ/yNgHAbPqKvqCS3pOPBydltxgTg0
 AaHnGbAmg0YnROj2spcY9ETn9KwwezRwO2m07IBpKvLtlCwUdT/x2qtMs04esTKm
 L+mMTGZDX7U1lbQ4yxBLtKdb
 -----END PRIVATE KEY-----
+
 4) This is the certificate -- 
 -----BEGIN CERTIFICATE-----
 MIIEdjCCAt6gAwIBAgIQGnm7pog06waLbJ5vSz3KqjANBgkqhkiG9w0BAQsFADCB
@@ -93,6 +95,7 @@ OzMN25ZmiYip/Bc6qwgSD6Ry98eKTW4erV2x4T8KbzwxKuCcCnPBF/F+o1lJUK7k
 FfFikN7RYGw22yP7UF7+VqxILUFx25G/UVlVzMDOL6Kgv19CvyKnRuE2Fqe510rm
 eJZMaVzDi3b2Bz2ZJmbyfDJ8cfxQNchgVdD318V9s4WrG6htHtBcrVNf
 -----END CERTIFICATE-----
+
 5) This is the code in secret.js -- 
 module.exports = {
     connectionString: "yourConnectionString"
