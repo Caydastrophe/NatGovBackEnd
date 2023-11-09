@@ -18,8 +18,8 @@ router.post('', (req, res) => {
     const post = new Post (
         {
             id: req.body.id,
-            caption: req.body.caption,
-            likes: req.body.likes,
+            Title: req.body.Title,
+            Details: req.body.Details,
             imgUrl: req.body.imgUrl    
         }
     )
@@ -33,8 +33,8 @@ router.post('', (req, res) => {
 router.post('', (req, res)=>{
     const post = new Post( {
         id: req.body.id,
-        caption: req.body.caption,
-        likes: req.body.likes,
+        Title: req.body.Title,
+        Details: req.body.Details,
         imgUrl: req.body.imgUrl 
     }
     )
