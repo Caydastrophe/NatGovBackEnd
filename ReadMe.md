@@ -9,7 +9,7 @@ I made use of the modules lab guide in aid of creating this app.
 Cloning the project from Git
 To pull code from a Git repository into Visual Studio using the terminal, you can follow these steps:
 
-1) Open the terminal and run: git clone https://github.com/VCDBN/apds7311-part-2-Caydastrophe
+1) Open the terminal and run: git clone <link>
 2) Install the dependancies
    
    --node modules

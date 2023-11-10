@@ -19,8 +19,7 @@ router.post('', (req, res) => {
         {
             id: req.body.id,
             Title: req.body.Title,
-            Details: req.body.Details,
-            imgUrl: req.body.imgUrl    
+            Details: req.body.Details
         }
     )
     post.save();
@@ -34,8 +33,7 @@ router.post('', (req, res)=>{
     const post = new Post( {
         id: req.body.id,
         Title: req.body.Title,
-        Details: req.body.Details,
-        imgUrl: req.body.imgUrl 
+        Details: req.body.Details
     }
     )
     post.save().then(()=>{
@@ -46,12 +44,14 @@ router.post('', (req, res)=>{
     })
 })
 
-router.delete("/:id", checkauth,  (req, res)=>{
-    Post.deleteOne({_id: req.params.id}) 
-    .then((result)=>
-    {
+router.delete("/:id", checkauth, (req, res) => {
+    Post.deleteOne({ _id: req.params.id }) // or {_id: req.params.id} if using MongoDB's default _id
+    .then(result => {
       res.status(200).json({message: "Post Deleted"});
+    })
+    .catch(error => {
+      res.status(500).json({message: "An error occurred"});
     });
-})
+});
 
 module.exports = router
