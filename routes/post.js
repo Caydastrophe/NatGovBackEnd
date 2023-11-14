@@ -2,6 +2,21 @@ const express = require('express')
 const router = express.Router();
 const Post = require('../models/post')
 const checkauth = require("../check-auth")
+const ExpressBrute = require('express-brute');
+const helmet = require('helmet');
+const morgan = require('morgan');
+
+router.use(helmet());
+router.use(morgan('dev'));
+
+const store = new ExpressBrute.MemoryStore();
+
+const bruteforce = new ExpressBrute(store, {
+    freeRetries: 3, // Number of attempts before IP gets a temporary ban
+    minWait: 5*60*1000, // 5 minutes
+    maxWait: 60*60*1000, // 1 hour
+});
+
 
 router.get('', (req, res) =>
 {
@@ -14,7 +29,7 @@ router.get('', (req, res) =>
     })
 })
 
-router.post('', (req, res) => {
+router.post('', checkauth, bruteforce.prevent, (req, res) => {
     const post = new Post (
         {
             id: req.body.id,
@@ -29,7 +44,7 @@ router.post('', (req, res) => {
     })
 })
 
-router.post('', (req, res)=>{
+router.post('', checkauth, bruteforce.prevent, (req, res)=>{
     const post = new Post( {
         id: req.body.id,
         Title: req.body.Title,
@@ -44,7 +59,7 @@ router.post('', (req, res)=>{
     })
 })
 
-router.delete("/:id", checkauth, (req, res) => {
+router.delete("/:id", checkauth, bruteforce.prevent,  (req, res) => {
     Post.deleteOne({ _id: req.params.id }) // or {_id: req.params.id} if using MongoDB's default _id
     .then(result => {
       res.status(200).json({message: "Post Deleted"});

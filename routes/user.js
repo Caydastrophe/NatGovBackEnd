@@ -3,8 +3,23 @@ const router = express.Router();
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const ExpressBrute = require('express-brute')
+const helmet = require('helmet');
+const morgan = require('morgan');
 
-router.post('/signup', (req, res)=>{
+router.use(helmet());
+router.use(morgan('dev'));
+
+const store = new ExpressBrute.MemoryStore();
+
+const bruteforce = new ExpressBrute(store, {
+    freeRetries: 3, // Number of attempts before IP gets a temporary ban
+    minWait: 5*60*1000, // 5 minutes
+    maxWait: 60*60*1000, // 1 hour
+});
+
+
+router.post('/signup', bruteforce.prevent, (req, res)=>{
     // https://www.npmjs.com/package/bcrypt
    try {
        bcrypt.hash(req.body.password, 10)
@@ -31,7 +46,7 @@ router.post('/signup', (req, res)=>{
             }
 });
 
-router.post('/login', async (req, res)=>{  
+router.post('/login', bruteforce.prevent,  async (req, res)=>{  
   try {
 
     const {username, password} = req.body;
