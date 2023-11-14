@@ -2,6 +2,14 @@
 
 #CODE ATTRIBUTION
 I made use of the modules lab guide in aid of creating this app.
+https://www.npmjs.com/package/express-brute
+npm install express-brute
+
+https://www.npmjs.com/package/helmet
+npm i helmet
+
+https://www.npmjs.com/package/morgan
+npm install morgan
 
 #README
 
