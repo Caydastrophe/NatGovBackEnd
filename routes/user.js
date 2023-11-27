@@ -22,7 +22,7 @@ const bruteforce = new ExpressBrute(store, {
 router.post('/signup', bruteforce.prevent, (req, res)=>{
     // https://www.npmjs.com/package/bcrypt
    try {
-       bcrypt.hash(req.body.password, 10)
+       bcrypt.hash(req.body.password, 10) //that ten is the salt
        .then(hash => { 
         const user = new User({
            username: req.body.username, 
@@ -50,7 +50,6 @@ router.post('/login', bruteforce.prevent,  async (req, res)=>{
   try {
 
     const {username, password} = req.body;
-
     const user = await User.findOne({username});
            // check if the user exists
       if (user && (await bcrypt.compare(password, user.password))) {
